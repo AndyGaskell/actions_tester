@@ -1,102 +1,46 @@
-% Test articles 
-\documentclass{article}
-\usepackage{graphicx}
-\usepackage{palatino}
-%\usepackage{draftwatermark}
-\title{Articles of 57 North Hacklab Ltd}
-\date{16th Apr 2019}
-% Following method of clause numbering is outlined in comp.text.tex
-% posting of 16th Feb 2009
-% 
-% Define a macro to allow the hanging of text from a marker
-\makeatletter
-\newcommand*{\hangfrom}[1]{%
-  \setbox\@tempboxa\hbox{{#1}}%
-  \hangindent \wd\@tempboxa
-  \noindent\box\@tempboxa}
-\makeatother
-% Define clause numbering counters
-\newcounter{clause}
-\renewcommand\theclause{\arabic{clause}}
-\newcounter{subclause}[clause]
-\renewcommand\thesubclause{\arabic{clause}.\arabic{subclause}}
-\newcounter{subsubclause}[subclause]
-\renewcommand\thesubsubclause{\arabic{clause}.\arabic{subclause}.\arabic{subsubclause}}
-\newcommand\clause[1]{%
-  \refstepcounter{clause}
-  \par\hangfrom{{\csname theclause\endcsname}\quad }{#1\par}}
-\newcommand\subclause[1]{%
-  \refstepcounter{subclause}
-  \par\hangfrom{\quad{\csname thesubclause\endcsname}\quad }{#1\par}}
-\newcommand\subsubclause[1]{%
-  \refstepcounter{subsubclause}
-  \par\hangfrom{\quad\quad{\csname thesubsubclause\endcsname}\quad }{#1\par}}
-% Put a gap between the clauses
-\addtolength{\parskip}{\baselineskip}
-% Don't number the headings
-\setcounter{secnumdepth}{0}
-% Shortcut to save some typing
-\newcommand{\charityact}{Charities and Trustee Investment (Scotland) Act 2005}
-\newcommand{\companyact}{Companies Act 2006}
-% End of preamble
+\documentclass[12pt]{article}
+\usepackage{lingmacros}
+\usepackage{tree-dvips}
 \begin{document}
-\begin{titlepage}
-  \vspace*{\fill}
-  \begin{center}
-    \includegraphics[width=0.35\textwidth]{logo.pdf}\\[1.5cm]
-    \textsc{\LARGE 57NORTH HACKLAB LTD}\\[1.5cm]
-    \textsc{\Large SC470230}\\[1.5cm]
-    \textsc{\Large Articles of Association}\\[1.5cm]
-    {\large 16\textsuperscript{th} April 2019}
-  \end{center}
-  \vspace*{\fill}
-\end{titlepage}
-\section{General}
-\subsection{Name}
-\clause{The name of the organisation shall be ``57North Hacklab Ltd'', 
-hereafter referred to as ``the Hacklab''.}
-\subsection{Location}
-\clause{The principal office of the Hacklab shall be in Scotland (and
-must remain in Scotland).}
-\clause{The Hacklab shall hold its regular activities in Aberdeen.}
 
-\section{Interpretation}
+\section*{Notes for My Paper}
 
-\clause{In the articles:}
-  \begin{description}
-  \item[Address] means a postal address or, for the purposes of
-    electronic communication, an e-mail address in each case
-    registered with the Hacklab
-  \item[Articles] means these articles of association
-  \item[Companies Acts] means the Companies Acts (as defined in section 2 of the
-  Companies Act 2006), in so far as they apply to the company;
-  \item[Director] means a director of the company, and includes any person 
-  occupying the position of director, by whatever name called;
-  \item[Document] includes, unless otherwise specified, any document sent or 
-  supplied in electronic form;
-  \item[Electronic Form] has the meaning given in section 1168 of the Companies 
-  Act 2006;
-  \item[Member] has the meaning given in section 112 of the Companies Act 2006;
-  \item[Proxy Notice] has the meaning given in article \ref{clause:proxy};
-  \item[Space Corp. Directives] is an alternative name for these articles;
-  \end{description}
-Unless the context otherwise requires, other words or expressions contained in 
-these articles bear the same meaning as in the Companies Act 2006 as in force on
-the date when these articles become binding on the company.
+Don't forget to include examples of topicalization.
+They look like this:
 
-\subsection{Purposes}
-\clause{The Hacklab's purposes are:}
-\begin{itemize}
-\item to promote and and encourage technical, scientific and artistic
-  skills and innovation through individual projects, collaboration and
-  education;
-\item to provide open events to allow the wider community to meet and
-  socialise together;
-\item to promote and support the use and development of free and open
-  technologies, standards, ideas, hardware and software for the
-  benefit of all;
-\item to provide a shared physical workspace, tools, storage and other
-  resources for its members;
-\item to work with other bodies with similar or complementary objectives.
-\end{itemize}
-\subsection{Powers}
+{\small
+\enumsentence{Topicalization from sentential subject:\\ 
+\shortex{7}{a John$_i$ [a & kltukl & [el & 
+  {\bf l-}oltoir & er & ngii$_i$ & a Mary]]}
+{ & {\bf R-}clear & {\sc comp} & 
+  {\bf IR}.{\sc 3s}-love   & P & him & }
+{John, (it's) clear that Mary loves (him).}}
+}
+
+\subsection*{How to handle topicalization}
+
+I'll just assume a tree structure like (\ex{1}).
+
+{\small
+\enumsentence{Structure of A$'$ Projections:\\ [2ex]
+\begin{tabular}[t]{cccc}
+    & \node{i}{CP}\\ [2ex]
+    \node{ii}{Spec} &   &\node{iii}{C$'$}\\ [2ex]
+        &\node{iv}{C} & & \node{v}{SAgrP}
+\end{tabular}
+\nodeconnect{i}{ii}
+\nodeconnect{i}{iii}
+\nodeconnect{iii}{iv}
+\nodeconnect{iii}{v}
+}
+}
+
+\subsection*{Mood}
+
+Mood changes when there is a topic, as well as when
+there is WH-movement.  \emph{Irrealis} is the mood when
+there is a non-subject topic or WH-phrase in Comp.
+\emph{Realis} is the mood when there is a subject topic
+or WH-phrase.
+
+\end{document}
